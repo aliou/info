@@ -12,7 +12,9 @@ app.use (req, res, next) ->
   next()
 
 app.get '/jam', (req, res) ->
-  request 'http://api.thisismyjam.com/1/aliou.json', (error, response, body) ->
+  url =  "http://api.thisismyjam.com/1/#{process.env.JAM_NAME}.json"
+
+  request url, (error, response, body) ->
     if !error and response.statusCode == 200
       data = JSON.parse(body)
       res.send JSON.stringify(data.jam)
@@ -20,7 +22,7 @@ app.get '/jam', (req, res) ->
       res.send {}
 
 app.get '/nowplaying', (req, res) ->
-  url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=aliouftw&format=json&limit=2&api_key=#{process.env.LF_KEY}"
+  url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=#{process.env.LF_NAME}&format=json&limit=2&api_key=#{process.env.LF_KEY}"
 
   request url, (error, response, body) ->
     if !error and response.statusCode == 200

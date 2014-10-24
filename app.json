@@ -7,6 +7,14 @@
     "LF_KEY": {
       "description": "Your Last.fm API key.",
       "required": true
+    },
+    "JAM_NAME": {
+      "description": "Your This is my Jam username.",
+      "required": true
+    },
+    "LF_NAME": {
+      "description": "Your Last.fm username.",
+      "required": true
     }
   }
 }
