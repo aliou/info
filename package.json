@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "coffee-script": "^1.8.0",
+    "express": "^4.10.0",
+    "morgan": "^1.4.1",
+    "request": "^2.46.0"
+  }
+}
