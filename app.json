@@ -1,0 +1,12 @@
+{
+  "name": "info",
+  "description": "Don't use this.",
+  "website": "https://github.com/aliou/info",
+  "repository": "https://github.com/aliou/info",
+  "env": {
+    "LF_KEY": {
+      "description": "Your Last.fm API key.",
+      "required": true
+    }
+  }
+}
