@@ -11,6 +11,12 @@ app.use (req, res, next) ->
   res.header 'Access-Control-Allow-Origin', '*'
   next()
 
+app.use (req, res, next) ->
+  if !process.env.LF_KEY?
+    res.send {}
+  else
+    next()
+
 app.get '/jam', (req, res) ->
   url =  "http://api.thisismyjam.com/1/#{process.env.JAM_NAME}.json"
 
