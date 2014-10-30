@@ -18,6 +18,7 @@ app.use (req, res, next) ->
     next()
 
 app.get '/jam', (req, res) ->
+  res.send {} if !process.env.JAM_NAME?
   url =  "http://api.thisismyjam.com/1/#{process.env.JAM_NAME}.json"
 
   request url, (error, response, body) ->
@@ -28,6 +29,7 @@ app.get '/jam', (req, res) ->
       res.send {}
 
 app.get '/nowplaying', (req, res) ->
+  res.send {} if !process.env.LF_NAME? and !process.env.LF_KEY?
   url = "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=#{process.env.LF_NAME}&format=json&limit=2&api_key=#{process.env.LF_KEY}"
 
   request url, (error, response, body) ->
