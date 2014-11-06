@@ -1,7 +1,7 @@
 {
   "name": "info",
   "description": "Don't use this.",
-  "website": "https://github.com/aliou/info",
+  "website": "http://info.aliou.me",
   "repository": "https://github.com/aliou/info",
   "env": {
     "LF_KEY": {
