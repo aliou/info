@@ -34,6 +34,7 @@ app.get '/jam', (req, res) ->
   request url, (error, response, body) ->
     if !error and response.statusCode == 200
       data = JSON.parse(body)
+      data.jam.combinedTruncated = "#{data.jam.title} by #{data.jam.artist}"
       res.send JSON.stringify(data.jam)
     else
       res.send {}
